@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DrawerComp from "./Drawer";
+import Link from 'next/link'
 
 
 import styles from './sass/nav.module.scss'
@@ -34,17 +35,17 @@ const Header = () => {
     <React.Fragment>
       <AppBar elevation={0} className={styles.nav}
        sx={{ background: "transparent",
-       padding:5,
+       padding:1,
     
     }} >
         <Toolbar>
+          <Link href='/'><a>
           <img src='/logo.png' alt='logo' className={styles.logo}/>
+          </a></Link>
           {/* <AddBusinessRoundedIcon sx={{ transform: "scale(2)" }} /> */}
           {isMatch ? (
             <>
-              <Typography sx={{ fontSize: "2rem", paddingLeft: "10%" }}>
-                Shoppee
-              </Typography>
+             
               <DrawerComp />
             </>
           ) : (
